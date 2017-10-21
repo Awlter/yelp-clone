@@ -1,0 +1,27 @@
+%section.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      =form_for @business, html: { class: 'form-horizontal' } do |f|
+        %header
+          %h1.head Add new business:
+        %fieldset
+          .form-group
+            =f.label :title, class: 'control-label col-sm-3'
+            .col-sm-6
+              =f.text_field :title, class: 'form-control'
+          .form-group
+            =f.label :description, class: 'control-label col-sm-3'
+            .col-sm-6
+              =f.text_area :description, class: 'form-control'
+          .form-group
+            =f.label :location, class: 'control-label col-sm-3'
+            .col-sm-6
+              =f.text_field :location, class: 'form-control'
+          .form-group
+            =f.label :phone_number, class: 'control-label col-sm-3'
+            .col-sm-6
+              =f.text_field :phone_number, class: 'form-control'
+        %fieldset.actions.control-group.col-sm-offset-3
+          .controls
+            %input(type="submit" value="Sign Up" class="btn btn-default")
+

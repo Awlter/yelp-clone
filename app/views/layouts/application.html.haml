@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+    %title YelpClone
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+  %body
+    %header
+      = render 'shared/header'
+    %section.content.clearfix
+      = yield

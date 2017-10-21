@@ -1,0 +1,20 @@
+= link_to 'Add a business', new_business_path
+%ul
+  - @businesses.each do |business|
+    %li.ylist-bordered
+      .main-attributes
+        %div
+          .media-avatar
+            %a(href="/biz/suffolk-arms-new-york")
+              %img(alt="Suffolk Arms" height="90" src="https://s3-media4.fl.yelpcdn.com/bphoto/fF1GcoJ6r9K3VckugcoZeg/90s.jpg" width="90")
+          %div
+            %h3
+              %span
+                %a(href="#")
+                  %span= business.title
+            %p 67 reviews
+            %p= business.description
+
+      .secondary-attributes
+        %address= business.location
+        %span= business.phone_number

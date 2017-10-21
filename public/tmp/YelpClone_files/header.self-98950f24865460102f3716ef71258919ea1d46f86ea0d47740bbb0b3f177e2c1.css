@@ -1,0 +1,71 @@
+/* line 1, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header {
+  background: #B9090B;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-radius: 5px;
+}
+/* line 7, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header a {
+  color: white;
+}
+/* line 9, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header h1 {
+  font-size: 20px;
+}
+/* line 11, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header > ul {
+  padding-top: 12px;
+}
+/* line 13, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header > ul li {
+  float: left;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+/* line 17, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header > ul li:first-of-type {
+  margin-left: -15px;
+}
+/* line 19, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header form {
+  padding-top: 6px;
+  margin: 0;
+}
+/* line 22, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header form input[type="text"] {
+  width: 320px;
+  float: left;
+}
+/* line 25, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header form input[type="submit"] {
+  margin-left: 10px;
+  float: left;
+}
+/* line 28, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links {
+  padding-top: 8px;
+}
+/* line 31, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links > ul > li {
+  float: left;
+  width: 200px;
+}
+/* line 34, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links > ul > li a {
+  margin: 0 10px;
+}
+/* line 36, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links > ul > li a b {
+  border-top-color: white;
+}
+/* line 40, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links > ul > li > ul > li.open section#top-header #user_links > ul > li > ul > li:hover {
+  background: red;
+}
+/* line 42, /Users/wangxuefei/Documents/rails/yelp_clone/app/assets/stylesheets/header.sass */
+section#top-header #user_links > ul > li > ul > li a {
+  color: black;
+  margin: 0;
+}
