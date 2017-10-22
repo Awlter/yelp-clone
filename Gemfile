@@ -36,9 +36,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
+  gem 'pry'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -47,6 +48,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'fabrication'
   gem 'faker'
+  gem 'shoulda-matchers',
+    git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+    branch: 'rails-5'
 end
 
 group :development do
