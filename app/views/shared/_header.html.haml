@@ -4,15 +4,17 @@
   %ul.col-md-6
     %li= link_to 'Businesses', businesses_path
     %li= link_to 'Recent Reviews'
-    %li= link_to 'Log in', log_in_path
-    %li= link_to 'Sign up'
-  #user_links.pull-right
-    %ul
-      %li.dropdown
-        %a(href="#" id="dlabel" role="button" data-toggle="dropdown" class="dropdown-toggle" data-target="#")
-          = "Welcome, Walter"
-          %b.caret
-        %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
-          %li
-            %a(href="#") Account
-            = link_to 'Sign Out'
+    - if !logged_in?
+      %li= link_to 'Log in', log_in_path
+      %li= link_to 'Sign up', register_path
+  - if logged_in?
+    #user_links.pull-right
+      %ul
+        %li.dropdown
+          %a(href="#" id="dlabel" role="button" data-toggle="dropdown" class="dropdown-toggle" data-target="#")
+            = "Welcome, #{current_user.full_name}"
+            %b.caret
+          %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
+            %li
+              %a(href="#") Account
+              = link_to 'Log Out', log_out_path

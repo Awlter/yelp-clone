@@ -1,7 +1,9 @@
 %div
   = flash[:notice]
 
-= link_to 'Add a business', new_business_path
+- if logged_in?
+  = link_to 'Add a business', new_business_path
+
 %ul
   - @businesses.each do |business|
     %li.ylist-bordered

@@ -15,4 +15,11 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
+  describe "full_name" do
+    it 'returns the full name of the user' do
+      user = Fabricate(:user)
+      expect(user.full_name).to eq(user.first_name + ' ' + user.last_name)
+    end
+  end
+
 end
