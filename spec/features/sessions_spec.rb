@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "LogIns", type: :feature do
+RSpec.feature "Sessions", type: :feature do
   let(:user) { Fabricate(:user) }
 
   scenario 'sign in with invalid password' do
