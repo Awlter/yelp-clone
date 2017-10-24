@@ -84,4 +84,18 @@ RSpec.describe BusinessesController, type: :controller do
       end
     end
   end
+
+  describe '#show' do
+    context 'as an authorized user' do
+      it 'responses successfully' do
+        user = Fabricate(:user)
+        session[:user_id] = user.id
+        business = Fabricate(:business, user: user)
+
+        get :show, params: { id: business.id }
+        expect(response).to be_success
+      end
+    end
+    context 'as a guest'
+  end
 end
