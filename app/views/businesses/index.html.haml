@@ -17,7 +17,8 @@
               %span
                 %a(href="#{business_path(business)}")
                   %span= business.title
-            %p 67 reviews
+            - count = business.reviews.count
+            %p #{pluralize(count, 'review')}
             %p= business.description
 
       .secondary-attributes

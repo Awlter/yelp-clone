@@ -3,7 +3,7 @@
     = link_to "Yelp", root_path
   %ul.col-md-6
     %li= link_to 'Businesses', businesses_path
-    %li= link_to 'Recent Reviews'
+    %li= link_to 'Recent Reviews', reviews_path
     - if !logged_in?
       %li= link_to 'Log in', log_in_path
       %li= link_to 'Sign up', register_path
