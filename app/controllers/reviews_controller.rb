@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :require_user, only: [:create]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.includes(:user)
   end
 
   def create
