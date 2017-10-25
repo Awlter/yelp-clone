@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :require_user
+  before_action :require_user, only: [:create]
 
   def index
     @reviews = Review.all
@@ -18,6 +18,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit!
+    params.require(:review).permit(:rating, :content)
   end
 end

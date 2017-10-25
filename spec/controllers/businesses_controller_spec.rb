@@ -19,7 +19,7 @@ RSpec.describe BusinessesController, type: :controller do
 
       it 'sets flash error message' do
         get :new
-        expect(flash[:error]).to_not be_blank
+        expect(flash[:error]).to be_present
       end
     end
   end
@@ -54,7 +54,7 @@ RSpec.describe BusinessesController, type: :controller do
 
         it 'sets flash notice message' do
           post :create, params: { business: business_attributes }
-          expect(flash[:notice]).to_not be_blank
+          expect(flash[:notice]).to be_present
         end
       end
 
@@ -71,7 +71,7 @@ RSpec.describe BusinessesController, type: :controller do
 
         it 'sets flash error message' do
           post :create, params: { business: business_attributes }
-          expect(flash[:error]).to_not be_blank
+          expect(flash[:error]).to be_present
         end
       end
     end
@@ -96,6 +96,5 @@ RSpec.describe BusinessesController, type: :controller do
         expect(response).to be_success
       end
     end
-    context 'as a guest'
   end
 end

@@ -1,4 +1,5 @@
 Fabricator(:business) do
+  user
   title { Faker::Lorem.characters(8) }
   description { Faker::Lorem.characters(20) }
   location { Faker::Lorem.characters(8) }

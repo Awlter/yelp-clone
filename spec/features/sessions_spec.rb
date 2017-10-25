@@ -5,13 +5,13 @@ RSpec.feature "Sessions", type: :feature do
 
   scenario 'sign in with invalid password' do
     visit log_in_path
-    expect(page).to_not have_content 'Welcome'
+    expect(page).to have_no_content 'Welcome'
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: Faker::Lorem.characters(11)
     click_button 'Log in'
 
-    expect(page).to_not have_content 'Welcome'
+    expect(page).to have_no_content 'Welcome'
     expect(page).to have_content 'Log in'
   end
 
@@ -23,7 +23,7 @@ RSpec.feature "Sessions", type: :feature do
     click_button 'Log in'
 
     expect(page).to have_content "Welcome, #{user.full_name}"
-    expect(page).to_not have_content 'Log in'
-    expect(page).to_not have_content 'Sign up'
+    expect(page).to have_no_content 'Log in'
+    expect(page).to have_no_content 'Sign up'
   end
 end

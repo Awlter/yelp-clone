@@ -24,7 +24,7 @@ RSpec.describe SessionsController, type: :controller do
       end
 
       it 'sets flash[:notice]' do
-        expect(flash[:notice]).to_not be_blank
+        expect(flash[:notice]).to be_present
       end
     end
 
@@ -38,7 +38,7 @@ RSpec.describe SessionsController, type: :controller do
       end
 
       it 'sets flash error message' do
-        expect(flash[:error]).to_not be_blank
+        expect(flash[:error]).to be_present
       end
     end
   end
@@ -60,7 +60,7 @@ RSpec.describe SessionsController, type: :controller do
       end
 
       it 'sets flash notice message' do
-        expect(flash[:notice]).to_not be_blank
+        expect(flash[:notice]).to be_present
       end
     end
   end

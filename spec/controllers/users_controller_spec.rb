@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
 
       it "sets the flash['notice']" do
         post :create, params: { user: user_params }
-        expect(flash[:notice]).to_not be_blank
+        expect(flash[:notice]).to be_present
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.describe UsersController, type: :controller do
 
       it "sets the flash['error']" do
         post :create, params: { user: invalid_user_params }
-        expect(flash[:error]).to_not be_blank
+        expect(flash[:error]).to be_present
       end
     end
   end

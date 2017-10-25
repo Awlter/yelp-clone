@@ -4,7 +4,7 @@ RSpec.feature "Businesses", type: :feature do
   scenario 'create a business' do
     visit root_path
 
-    expect(page).to_not have_content 'Add a business'
+    expect(page).to have_no_content 'Add a business'
 
     user = Fabricate(:user)
     sign_in(user)

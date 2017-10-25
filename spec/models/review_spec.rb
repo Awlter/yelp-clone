@@ -6,11 +6,8 @@ RSpec.describe Review, type: :model do
 
   describe "scope recent_ones" do
     it 'returns reviews with the the most recent one at top' do
-      user = Fabricate(:user)
-      business = Fabricate(:business)
-
-      review1 = Fabricate(:review, user: user, business: business)
-      review2 = Fabricate(:review, user: user, business: business)
+      review1 = Fabricate(:review)
+      review2 = Fabricate(:review)
 
       expect(Review.recent_ones).to eq [review2, review1]
     end
