@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'log_out', to: 'sessions#destroy'
   get 'reviews', to: 'reviews#index'
 
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show]
   resources :businesses, only: [:index, :new, :create, :show] do
     resources :reviews, only: [:create]
   end

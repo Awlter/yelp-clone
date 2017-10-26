@@ -2,6 +2,6 @@
   %li.row.review-row
     .col-sm-3
       %p Rating: #{review.rating} / 5
-      %p by <a href="">#{review.user.full_name}</a>
+      %p by <a href="#{user_path(review.user)}">#{review.user.full_name}</a>
     .col-sm-7
       %p= review.content
