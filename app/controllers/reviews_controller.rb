@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    business = Business.find_by(id: params[:business_id])
+    business = Business.find_by(slug: params[:business_id])
     review = Review.new(review_params)
     review.user = current_user
     review.business = business

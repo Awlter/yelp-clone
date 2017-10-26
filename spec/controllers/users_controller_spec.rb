@@ -47,7 +47,7 @@ RSpec.describe UsersController, type: :controller do
   describe '#show' do
     it 'responses successfully' do
       user = Fabricate(:user)
-      get :show, params: { id: user.id }
+      get :show, params: { id: user.slug }
       expect(response).to be_success
     end
   end

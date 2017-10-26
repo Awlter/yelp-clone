@@ -22,7 +22,7 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find_by(id: params[:id])
+    @business = Business.find_by(slug: params[:id])
   end
 
   private

@@ -20,13 +20,13 @@ RSpec.describe ReviewsController, type: :controller do
 
       it 'adds a new review' do
         expect {
-          post :create, params: { business_id: business.id, review: review_attributes }
+          post :create, params: { business_id: business.slug, review: review_attributes }
         }.to change(Review.all, :count).by(1)
       end
 
       it 'redirects to the business show page' do
-        post :create, params: { business_id: business.id, review: review_attributes }
-        expect(response).to redirect_to business_path(business.id)
+        post :create, params: { business_id: business.slug, review: review_attributes }
+        expect(response).to redirect_to business_path(business)
       end
     end
 
