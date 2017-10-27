@@ -2,16 +2,19 @@ module Sluggable
   extend ActiveSupport::Concern
 
   included do
-    before_save :generate_slug!
+    after_validation :generate_slug!
     class_attribute :slug_column
   end
 
   def to_slug
+    binding.pry
     slug = self.send(self.class.slug_column).gsub(/[^a-zA-Z0-9]/, '-').downcase
     slug.gsub(/[-]+/, '-')
   end
 
   def generate_slug!
+    # return self.slug = 'test' if Rails.env == 'test'
+
     slug = to_slug
     a_regex = /\A#{slug}[\-0-9]*\z/
     count = self.class.select { |ele| ele.slug && ele.slug.match(a_regex)}.size
