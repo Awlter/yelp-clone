@@ -8,7 +8,12 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_presence_of :last_name }
   it { is_expected.to validate_presence_of :email }
   it { is_expected.to validate_presence_of :password }
-  it { is_expected.to validate_uniqueness_of :email }
+
+  context 'validate email uniqueness' do
+    subject { User.new(Fabricate.attributes_for(:user, email: nil)) }
+
+    it { is_expected.to validate_uniqueness_of :email }
+  end
 
   it "is valid with a first name, last name, email, and password" do
     user = Fabricate(:user)
